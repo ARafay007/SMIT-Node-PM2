@@ -5,8 +5,8 @@ const app = express();
 app.get('/block', (req, res) => {
     const start = Date.now();
 
-    while (Date.now() - start < 3000) {
-        // Block event loop for 5 seconds
+    while (Date.now() - start < 10000) {
+        // Block event loop for 10 seconds
     }
 
     res.send(`Finished blocking ${process.pid}`);
