@@ -12,6 +12,16 @@ app.get('/block', (req, res) => {
     res.send(`Finished blocking ${process.pid}`);
 });
 
+app.get('/test', (req, res) => {
+    const start = Date.now();
+
+    while (Date.now() - start < 4000) {
+        // Block event loop for 4 seconds
+    }
+
+    res.send(`Finished blocking ${process.pid}`);
+});
+
 app.get('/', (req, res) => {
     res.send(`Finished response ${process.pid}`);
 })
